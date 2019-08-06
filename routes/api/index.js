@@ -3,6 +3,7 @@ const router = require('express').Router();
 router.use('/', require('./mailer'));
 
 router.use(function(err, req, res, next){
+	console.log('1');
 	if(err.name === 'ValidationError'){
 		return res.status(422).json({
 			errors: Object.keys(err.errors).reduce(function(errors, key){

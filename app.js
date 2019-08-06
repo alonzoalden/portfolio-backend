@@ -28,7 +28,9 @@ if (!isProduction) {
 	app.use(errorhandler());
 }
 
-app.options('*', cors())
+app.use(cors({
+	origin: 'https://alonzoalden.com'
+}));
 
 app.use(require('./routes'));
 
