@@ -11,7 +11,7 @@ const isSQL = process.argv.slice(2)[0] === 'sql';
 
 //Global app object
 const app = express();
-console.log(process.env.NODE_ENV);
+
 app.use(cors());
 
 // Normal express config defaults
@@ -28,6 +28,7 @@ if (!isProduction) {
 	app.use(errorhandler());
 }
 
+app.options('*', cors())
 
 app.use(require('./routes'));
 
