@@ -1,7 +1,6 @@
 const router = require('express').Router();
 
-router.use('/', require('./listings'));
-router.use('/', require('./users-sql'))
+router.use('/', require('./mailer'));
 
 router.use(function(err, req, res, next){
 	if(err.name === 'ValidationError'){
