@@ -66,8 +66,8 @@ app.use(function(err, req, res, next) {
 });
 
 //starting server
-app.listen(3000, function () {
-	console.log('DEV server listening on port 3000!');
+app.listen(3001, function () {
+	console.log('DEV server listening on port 3001!');
 });
 
 module.exports = app;
