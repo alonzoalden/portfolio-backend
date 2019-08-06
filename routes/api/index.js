@@ -1,9 +1,15 @@
 const router = require('express').Router();
 
+router.all('*', (req, res, next) => {
+    if (req.headers.origin !== 'https://alonzoalden.com') {
+		return res.end('Not allowed');
+	}
+    next();
+});
+
 router.use('/', require('./mailer'));
 
 router.use(function(err, req, res, next){
-	console.log('1');
 	if(err.name === 'ValidationError'){
 		return res.status(422).json({
 			errors: Object.keys(err.errors).reduce(function(errors, key){

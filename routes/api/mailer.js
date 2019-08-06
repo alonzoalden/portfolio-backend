@@ -10,18 +10,10 @@ const corsOptions = {
   }
 //retreive listings/rides
 router.post('/email', cors(corsOptions), async (req, res, next) => {
-	if (req.headers.origin !== 'https://alonzoalden.com') {
-		return res.end('Not allowed');
-	}	
 	try {
-
-		//res.set('Access-Control-Allow-Origin', 'https://alonzoalden.com');
 
 		// async..await is not allowed in global scope, must use a wrapper
 		async function main(){
-			// Generate test SMTP service account from ethereal.email
-			// Only needed if you don't have a real mail account for testing
-			let testAccount = await nodemailer.createTestAccount();
 
 			// create reusable transporter object using the default SMTP transport
 			let transporter = nodemailer.createTransport({
