@@ -35,7 +35,7 @@
     "pg-pool": "^2.0.3",
     "request": "2.69.0",
     "slug": "0.9.1",
-    "underscore": "^1.8.3"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
